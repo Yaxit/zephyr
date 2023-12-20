@@ -32,3 +32,14 @@ config TENSORFLOW_LITE_MICRO_CMSIS_NN_KERNELS
 	  This option adds support for CMSIS-NN optimized kernels when using TensorFlow Lite Micro.
 
 endif # CPU_CORTEX_M
+
+if SOC_FAMILY_ESP32
+
+config TENSORFLOW_LITE_MICRO_ESP_NN_KERNELS
+	bool "TensorFlow Lite Micro with optimized ESP-NN kernels"
+	depends on TENSORFLOW_LITE_MICRO
+	select ESP_NN
+	help
+	  This option adds support for ESP-NN optimized kernels when using TensorFlow Lite Micro.
+
+endif # SOC_FAMILY_ESP32
